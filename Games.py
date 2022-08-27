@@ -33,3 +33,10 @@ class Games():
             from games import tictactoe
         except Exception:
             print('Just put sys.exit under pygame.quit')
+
+
+    def snake(self):
+        try:
+            from games import snake
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
