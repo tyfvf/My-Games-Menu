@@ -40,3 +40,10 @@ class Games():
             from games import snake
         except Exception:
             print('Just put sys.exit under pygame.quit')
+
+
+    def whip(self):
+        try:
+            from games import whip
+        except Exception:
+            print('Just put sys.exit under pygame.quit')

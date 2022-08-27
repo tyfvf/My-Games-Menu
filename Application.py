@@ -57,6 +57,9 @@ class Application(Games):
         self.snake_bt = Button(self.canvas, text='Snake Game', bg='#FAB353', activebackground='#FAB353', command=self.snake)
         self.canvas.create_window(220, 220, window=self.snake_bt)
 
+        self.whip_bt = Button(self.canvas, text='Whip Game', bg='#FAB353', activebackground='#FAB353', command=self.whip)
+        self.canvas.create_window(220, 260, window=self.whip_bt)
+
 
     def scrollbar(self):
         self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
