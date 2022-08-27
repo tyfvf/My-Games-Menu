@@ -9,6 +9,7 @@ class Application(Games):
         self.frames()
         self.title()
         self.game_buttons()
+        self.scrollbar()
         self.root.mainloop()
 
     
@@ -26,6 +27,8 @@ class Application(Games):
         self.frame2 = Frame(self.root, bg='#DE5E49')
         self.frame2.place(relx=0.05, rely=0.25, relwidth=0.90, relheight=0.70)
 
+        self.canvas = Canvas(self.frame2, bg='#DE5E49', scrollregion=(0, 0, 0, 700), height=500)
+
 
     def title(self):
         self.title_lb = Label(self.frame1, text='My Games Menu', bg='#DE5E49', font=('Times', 32, 'bold'))
@@ -36,5 +39,12 @@ class Application(Games):
 
 
     def game_buttons(self):
-        self.first_bt = Button(self.frame2, text='My first game', bg='#FAB353', activebackground='#FAB353', command=self.first)
-        self.first_bt.pack(pady=10)
+        self.first_bt = Button(self.canvas, text='My first game', bg='#FAB353', activebackground='#FAB353', command=self.first)
+        self.canvas.create_window(220, 20, window=self.first_bt)
+
+
+    def scrollbar(self):
+        self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
+        self.canvas.config(yscrollcommand=self.scroll.set)
+        self.scroll.pack(side=RIGHT, fill=Y)
+        self.canvas.pack(side=LEFT, expand=True, fill=BOTH)
