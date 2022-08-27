@@ -1,7 +1,8 @@
 from tkinter import *
+from Games import Games
 
 
-class Application():
+class Application(Games):
     def __init__(self):
         self.root = Tk()
         self.screen()
@@ -30,7 +31,10 @@ class Application():
         self.title_lb = Label(self.frame1, text='My Games Menu', bg='#DE5E49', font=('Times', 32, 'bold'))
         self.title_lb.place(relx=0.13, rely=0.05, relheight=0.90)
 
+        self.note_lb = Label(self.frame1, text='on pygame', bg='#DE5E49', font=('Times', 9, 'bold'))
+        self.note_lb.place(relx=0.85, rely=0.72)
+
 
     def game_buttons(self):
-        self.first_bt = Button(self.frame2, text='My first game')
-        self.first_bt.place(relx=0.4, rely=0.05)
+        self.first_bt = Button(self.frame2, text='My first game', bg='#FAB353', activebackground='#FAB353', command=self.first)
+        self.first_bt.pack(pady=10)
