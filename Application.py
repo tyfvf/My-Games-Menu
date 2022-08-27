@@ -39,25 +39,25 @@ class Application(Games):
 
 
     def game_buttons(self):
-        self.first_bt = Button(self.canvas, text='My first game', bg='#FAB353', activebackground='#FAB353', command=self.first)
+        self.first_bt = Button(self.canvas, text='My first game', width=12, bg='#FAB353', activebackground='#FAB353', command=self.first)
         self.canvas.create_window(220, 20, window=self.first_bt)
 
-        self.pong_bt = Button(self.canvas, text='Pong', bg='#FAB353', activebackground='#FAB353', command=self.pong)
+        self.pong_bt = Button(self.canvas, text='Pong', bg='#FAB353', width=12, activebackground='#FAB353', command=self.pong)
         self.canvas.create_window(220, 60, window=self.pong_bt)
 
-        self.runner_bt = Button(self.canvas, text='Runner', bg='#FAB353', activebackground='#FAB353', command=self.runner)
+        self.runner_bt = Button(self.canvas, text='Runner', bg='#FAB353', width=12, activebackground='#FAB353', command=self.runner)
         self.canvas.create_window(220, 100, window=self.runner_bt)
 
-        self.flappy_bt = Button(self.canvas, text='Flappy Bird', bg='#FAB353', activebackground='#FAB353', command=self.flappy)
+        self.flappy_bt = Button(self.canvas, text='Flappy Bird', bg='#FAB353',  width=12, activebackground='#FAB353', command=self.flappy)
         self.canvas.create_window(220, 140, window=self.flappy_bt)
 
-        self.tic_bt = Button(self.canvas, text='Tic Tac Toe', bg='#FAB353', activebackground='#FAB353', command=self.tictactoe)
+        self.tic_bt = Button(self.canvas, text='Tic Tac Toe', bg='#FAB353', width=12, activebackground='#FAB353', command=self.tictactoe)
         self.canvas.create_window(220, 180, window=self.tic_bt)
 
-        self.snake_bt = Button(self.canvas, text='Snake Game', bg='#FAB353', activebackground='#FAB353', command=self.snake)
+        self.snake_bt = Button(self.canvas, text='Snake Game', bg='#FAB353', width=12, activebackground='#FAB353', command=self.snake)
         self.canvas.create_window(220, 220, window=self.snake_bt)
 
-        self.whip_bt = Button(self.canvas, text='Whip Game', bg='#FAB353', activebackground='#FAB353', command=self.whip)
+        self.whip_bt = Button(self.canvas, text='Whip Game', bg='#FAB353', width=12, activebackground='#FAB353', command=self.whip)
         self.canvas.create_window(220, 260, window=self.whip_bt)
 
 
