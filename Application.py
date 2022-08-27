@@ -42,6 +42,9 @@ class Application(Games):
         self.first_bt = Button(self.canvas, text='My first game', bg='#FAB353', activebackground='#FAB353', command=self.first)
         self.canvas.create_window(220, 20, window=self.first_bt)
 
+        self.pong_bt = Button(self.canvas, text='Pong', bg='#FAB353', activebackground='#FAB353', command=self.pong)
+        self.canvas.create_window(220, 60, window=self.pong_bt)
+
 
     def scrollbar(self):
         self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
