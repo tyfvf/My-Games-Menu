@@ -26,3 +26,10 @@ class Games():
             from games import flappybird
         except Exception:
             print('Just put sys.exit under pygame.quit')
+
+
+    def tictactoe(self):
+        try:
+            from games import tictactoe
+        except Exception:
+            print('Just put sys.exit under pygame.quit')

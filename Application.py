@@ -51,6 +51,9 @@ class Application(Games):
         self.flappy_bt = Button(self.canvas, text='Flappy Bird', bg='#FAB353', activebackground='#FAB353', command=self.flappy)
         self.canvas.create_window(220, 140, window=self.flappy_bt)
 
+        self.tic_bt = Button(self.canvas, text='Tic Tac Toe', bg='#FAB353', activebackground='#FAB353', command=self.tictactoe)
+        self.canvas.create_window(220, 180, window=self.tic_bt)
+
 
     def scrollbar(self):
         self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
