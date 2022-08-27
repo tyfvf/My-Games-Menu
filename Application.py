@@ -48,6 +48,9 @@ class Application(Games):
         self.runner_bt = Button(self.canvas, text='Runner', bg='#FAB353', activebackground='#FAB353', command=self.runner)
         self.canvas.create_window(220, 100, window=self.runner_bt)
 
+        self.flappy_bt = Button(self.canvas, text='Flappy Bird', bg='#FAB353', activebackground='#FAB353', command=self.flappy)
+        self.canvas.create_window(220, 140, window=self.flappy_bt)
+
 
     def scrollbar(self):
         self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
