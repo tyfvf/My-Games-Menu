@@ -1,4 +1,5 @@
 from tkinter import *
+import awesometkinter as atk
 from Games import Games
 
 
@@ -10,6 +11,7 @@ class Application(Games):
         self.title()
         self.game_buttons()
         self.scrollbar()
+        self.tooltips()
         self.root.mainloop()
 
     
@@ -66,3 +68,13 @@ class Application(Games):
         self.canvas.config(yscrollcommand=self.scroll.set)
         self.scroll.pack(side=RIGHT, fill=Y)
         self.canvas.pack(side=LEFT, expand=True, fill=BOTH)
+
+
+    def tooltips(self):
+        atk.tooltip(self.first_bt, 'This is the first game i made using pygame\n, watching a 10 min casual video about')
+        atk.tooltip(self.pong_bt, 'This is the game i made with the knowledge of that 10 min video')
+        atk.tooltip(self.runner_bt, 'This is a game where i copied and learnt from one of the best channels about pygame, clear code,\n the video was 3 hours and 47 min')
+        atk.tooltip(self.flappy_bt, 'My first game after watching the clear code video,\n i already did a flappy bird clone in java so i had all sprites')
+        atk.tooltip(self.tic_bt, 'Just practicing some logic and trying different styles of games')
+        atk.tooltip(self.snake_bt, 'Same thing as the game above, pretty cool game')
+        atk.tooltip(self.whip_bt, 'This i made with a self restriction time of one hour\n and under a random theme my friend chose, which was: whip')
