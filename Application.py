@@ -62,6 +62,9 @@ class Application(Games):
         self.whip_bt = Button(self.canvas, text='Whip Game', bg='#FAB353', width=12, activebackground='#FAB353', command=self.whip)
         self.canvas.create_window(220, 260, window=self.whip_bt)
 
+        self.minesweeper_bt = Button(self.canvas, text='Minesweeper', bg='#FAB353', width=12, activebackground='#FAB353', command=self.minesweeper)
+        self.canvas.create_window(220, 260, window=self.minesweeper_bt)
+
 
     def scrollbar(self):
         self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
@@ -71,10 +74,11 @@ class Application(Games):
 
 
     def tooltips(self):
-        atk.tooltip(self.first_bt, 'This is the first game i made using pygame\n, watching a 10 min casual video about')
+        atk.tooltip(self.first_bt, 'This is the first game i made using pygame,\nwhile watching a 10 min casual video about')
         atk.tooltip(self.pong_bt, 'This is the game i made with the knowledge of that 10 min video')
-        atk.tooltip(self.runner_bt, 'This is a game where i copied and learnt from one of the best channels about pygame, clear code,\n the video was 3 hours and 47 min')
-        atk.tooltip(self.flappy_bt, 'My first game after watching the clear code video,\n i already did a flappy bird clone in java so i had all sprites')
+        atk.tooltip(self.runner_bt, 'This is a game where i copied and learnt from one of the best channels about pygame, clear code,\nthe video was 3 hours and 47 min')
+        atk.tooltip(self.flappy_bt, 'My first game after watching the clear code video,\ni already did a flappy bird clone in java so i had all sprites')
         atk.tooltip(self.tic_bt, 'Just practicing some logic and trying different styles of games')
         atk.tooltip(self.snake_bt, 'Same thing as the game above, pretty cool game')
-        atk.tooltip(self.whip_bt, 'This i made with a self restriction time of one hour\n and under a random theme my friend chose, which was: whip')
+        atk.tooltip(self.whip_bt, 'This i made with a self restriction time of one hour\nand under a random theme my friend chose, which was: whip')
+        atk.tooltip(self.minesweeper_bt, 'A minesweeper clone OOP oriented from a yt channel called Daniel Chang\nProps to him')

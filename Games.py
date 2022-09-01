@@ -47,3 +47,10 @@ class Games():
             from games import whip
         except Exception:
             print('Just put sys.exit under pygame.quit')
+    
+    
+    def minesweeper(self):
+        try:
+            from games.minesweeper import main
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
