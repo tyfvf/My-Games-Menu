@@ -41,6 +41,9 @@ https://user-images.githubusercontent.com/75546113/187052958-c14bbd1b-273f-459c-
 
 https://user-images.githubusercontent.com/75546113/187990683-9657c471-b319-47e5-8f09-a910278e7772.mp4
 
+## Chess:
+
+https://user-images.githubusercontent.com/75546113/198456855-e965129e-24ae-40c2-8fcb-8f942711233e.mp4
 
 
 TODO: More games
