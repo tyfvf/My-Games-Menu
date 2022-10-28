@@ -1,5 +1,4 @@
 import pygame
-from sys import exit
 from random import randint, choice
 
 class Player(pygame.sprite.Sprite):
@@ -107,6 +106,7 @@ pygame.display.set_caption('Runner')
 clock = pygame.time.Clock()
 font = pygame.font.Font('./games/font/Pixeltype.ttf', 50)
 game_active = False
+running = True
 start_time = 0
 score = 0
 bg_music = pygame.mixer.Sound('./games/audio/music.wav')
@@ -137,10 +137,10 @@ game_message_rect = game_message.get_rect(center = (400, 350))
 obstacle_timer = pygame.USEREVENT + 1
 pygame.time.set_timer(obstacle_timer, 1500)
 
-while True:
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
+            running = False
         if game_active:
             if event.type == obstacle_timer:
                 obstacle_group.add(Obstacle(choice(['fly', 'snail', 'snail', 'snail'])))
@@ -178,3 +178,5 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+
+pygame.quit()

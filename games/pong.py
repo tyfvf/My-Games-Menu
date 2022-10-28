@@ -1,6 +1,6 @@
 import pygame
 
-import pygame,sys
+import pygame
 from pygame.locals import *
 import random
 
@@ -9,6 +9,7 @@ def main():
     pygame.init()
 
     clock = pygame.time.Clock()
+    running = True
 
     WIDTH = 600
     HEIGHT = 400
@@ -37,13 +38,13 @@ def main():
     score1 = 0
     score2 = 0
 
-    while True:
+    while running:
 
         clock.tick(60)
 
         for event in pygame.event.get():
             if event.type == QUIT:
-                pygame.quit()
+                running = False
 
         # Move players
         keys = pygame.key.get_pressed()
@@ -104,5 +105,7 @@ def main():
         DISPLAY.blit(score2Text, (DISPLAY.get_width() / 2 + 64, 0))
 
         pygame.display.update()
+
+    pygame.quit()
 
 main()

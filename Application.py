@@ -63,7 +63,7 @@ class Application(Games):
         self.canvas.create_window(220, 260, window=self.whip_bt)
 
         self.minesweeper_bt = Button(self.canvas, text='Minesweeper', bg='#FAB353', width=12, activebackground='#FAB353', command=self.minesweeper)
-        self.canvas.create_window(220, 260, window=self.minesweeper_bt)
+        self.canvas.create_window(220, 300, window=self.minesweeper_bt)
 
 
     def scrollbar(self):

@@ -1,5 +1,4 @@
 import pygame
-from sys import exit
 from random import randint
 
 class Plataforma(pygame.sprite.Sprite):
@@ -35,6 +34,7 @@ class Plataforma(pygame.sprite.Sprite):
 pygame.init()
 display = pygame.display.set_mode((600, 600))
 pygame.display.set_caption('Whip Game?')
+running = True
 clock = pygame.time.Clock()
 font = pygame.font.SysFont('Comic Sans', 32, True)
 
@@ -56,10 +56,10 @@ pygame.time.set_timer(plataforma_timer, 1500)
 difficulty_timer = pygame.USEREVENT + 2
 pygame.time.set_timer(difficulty_timer, 10000)
 
-while True:
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
+            running = False
 
         if event.type == plataforma_timer:
             plataforma_group.add(Plataforma())
@@ -84,3 +84,5 @@ while True:
 
     pygame.display.update()
     clock.tick(60)
+
+pygame.quit()

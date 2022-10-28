@@ -1,5 +1,4 @@
 import pygame
-from sys import exit
 from random import randint
 
 def grid():
@@ -27,6 +26,7 @@ def check_collisions():
 pygame.init()
 display = pygame.display.set_mode((500, 500))
 clock = pygame.time.Clock()
+running = True
 font = pygame.font.SysFont('Comic Sans', 64, True)
 
 snake_surf = pygame.Surface((20, 20))
@@ -44,10 +44,10 @@ score = 0
 # Game over
 retry = font.render('Retry?', True, 'Black')
 
-while True:
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            pygame.quit()
+            running = False
 
         if game_active:
             if event.type == pygame.KEYDOWN:
@@ -115,3 +115,5 @@ while True:
 
     pygame.display.update()
     clock.tick(20)
+
+pygame.quit()

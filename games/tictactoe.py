@@ -1,5 +1,4 @@
 import pygame
-from sys import exit
 
 def main():
     pygame.init()
@@ -8,6 +7,7 @@ def main():
     clock = pygame.time.Clock()
     font = pygame.font.SysFont('Comic Sans', 48, True)
     font_turn = pygame.font.SysFont('Comic Sans', 12, True)
+    running = True
     x_turn = True
     winner = False
     draw = False
@@ -99,10 +99,10 @@ def main():
         else:
             return False
 
-    while True:
+    while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                pygame.quit()
+                running = False
 
             if not winner and not draw:
                 if event.type == pygame.MOUSEBUTTONDOWN:
@@ -180,5 +180,6 @@ def main():
         pygame.display.update()
         clock.tick(60)
 
+    pygame.quit()
 
 main()
