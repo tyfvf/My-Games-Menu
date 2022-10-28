@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 
 from pygame.locals import *
 from random import randint
@@ -16,7 +16,6 @@ def main():
     pygame.init()
 
     clock = pygame.time.Clock()
-    running = True
 
     (width, height) = (640, 480)
 
@@ -39,13 +38,13 @@ def main():
     for i in range(10):
         enemies.append(Enemy(randint(0, width - 32), randint(-32, 32)))
 
-    while running:
+    while True:
         clock.tick(60)
 
         for event in pygame.event.get():
 
             if event.type == pygame.QUIT:
-                running = False
+                pygame.quit()
 
         #
 
@@ -90,8 +89,6 @@ def main():
         #
 
         pygame.display.update()
-
-    pygame.quit()
 
 
 main()

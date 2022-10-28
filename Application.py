@@ -65,6 +65,9 @@ class Application(Games):
         self.minesweeper_bt = Button(self.canvas, text='Minesweeper', bg='#FAB353', width=12, activebackground='#FAB353', command=self.minesweeper)
         self.canvas.create_window(220, 300, window=self.minesweeper_bt)
 
+        self.chess_bt = Button(self.canvas, text='Chess', bg='#FAB353', width=12, activebackground='#FAB353', command=self.chess)
+        self.canvas.create_window(220, 340, window=self.chess_bt)
+
 
     def scrollbar(self):
         self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
@@ -81,4 +84,5 @@ class Application(Games):
         atk.tooltip(self.tic_bt, 'Just practicing some logic and trying different styles of games')
         atk.tooltip(self.snake_bt, 'Same thing as the game above, pretty cool game')
         atk.tooltip(self.whip_bt, 'This i made with a self restriction time of one hour\nand under a random theme my friend chose, which was: whip')
-        atk.tooltip(self.minesweeper_bt, 'A minesweeper clone OOP oriented from a yt channel called Daniel Chang\nProps to him')
+        atk.tooltip(self.minesweeper_bt, 'A minesweeper clone OOP oriented, from a yt channel called Daniel Chang\nProps to him')
+        atk.tooltip(self.chess_bt, 'A chees game OOP oriented, from a yt channel called Coding Spot\nProps to him')

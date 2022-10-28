@@ -1,41 +1,63 @@
 class Games():
 
     def first(self):
-        from games import first
-        
+        try:
+            from games import first
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
 
     
     def pong(self):
-        from games import pong
-        
+        try:
+            from games import pong
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
 
 
     def runner(self):
-        from games import runner
+        try:
+            from games import runner
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
 
 
     def flappy(self):
-        from games import flappybird
-        
+        try:
+            from games import flappybird
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
 
 
     def tictactoe(self):
-        from games import tictactoe
-        
+        try:
+            from games import tictactoe
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
 
 
     def snake(self):
-        from games import snake
-        
+        try:
+            from games import snake
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
 
 
     def whip(self):
-        from games import whip
-        
+        try:
+            from games import whip
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
     
     
     def minesweeper(self):
         try:
             from games.minesweeper import main
+        except Exception:
+            print('Just put sys.exit under pygame.quit')
+
+
+    def chess(self):
+        try:
+            from games.chess import main
         except Exception:
             print('Just put sys.exit under pygame.quit')

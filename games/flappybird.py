@@ -1,4 +1,5 @@
 import pygame
+from sys import exit
 from random import randint
 
 
@@ -99,7 +100,6 @@ icon = pygame.image.load('./games/graphics/flappybird/bird0.png').convert_alpha(
 pygame.display.set_icon(icon)
 clock = pygame.time.Clock()
 game_active = True
-running = True
 score = 0
 font = pygame.font.SysFont('Verdana', 32, True)
 
@@ -125,10 +125,10 @@ gameover_rect = gameover.get_rect(center = (144, 50))
 playbutton = pygame.image.load('./games/graphics/flappybird/playbutton.png').convert_alpha()
 playbutton_rect = playbutton.get_rect(center = (144, 160))
 
-while running:
+while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
+            pygame.quit()
         
         if game_active:
             if event.type == tube_timer:
@@ -180,5 +180,3 @@ while running:
 
     pygame.display.update()
     clock.tick(60)
-
-pygame.quit()
