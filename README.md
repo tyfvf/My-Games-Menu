@@ -39,7 +39,7 @@ https://user-images.githubusercontent.com/75546113/187052958-c14bbd1b-273f-459c-
 
 ## Minesweeper Game:
 
-https://user-images.githubusercontent.com/75546113/187990683-9657c471-b319-47e5-8f09-a910278e7772.mp4
+https://user-images.githubusercontent.com/75546113/199648006-40c21b48-ec18-441c-9030-1406e9dee1a9.mp4
 
 ## Chess:
 
