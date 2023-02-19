@@ -1,11 +1,11 @@
 # My-Games-Menu
 
-A menu i made to showcase all games i made and will make it with pygame
+A menu i made to showcase all games i made and will make it with pygame.
 
 
-## The menu interface
+## (NEW) menu interface
 
-![image](https://user-images.githubusercontent.com/75546113/187052820-dc34b84d-b184-41b4-9e1e-cf8e89bcd86d.png)
+![image](https://user-images.githubusercontent.com/75546113/219907628-1f319e1c-660d-42ad-a0ae-3aac964aaf86.png)
 
 ## Games
 
@@ -33,17 +33,22 @@ https://user-images.githubusercontent.com/75546113/187052943-391a9e69-f145-44a0-
 
 https://user-images.githubusercontent.com/75546113/187052951-0b4c4373-dc27-4f92-b236-fed975275c06.mp4
 
-## Self imposed challenge game:
+### Self imposed challenge game:
 
 https://user-images.githubusercontent.com/75546113/187052958-c14bbd1b-273f-459c-9154-7ed27d52c440.mp4
 
-## Minesweeper Game:
+### Minesweeper Game:
 
 https://user-images.githubusercontent.com/75546113/199648006-40c21b48-ec18-441c-9030-1406e9dee1a9.mp4
 
-## Chess:
+### Chess:
 
 https://user-images.githubusercontent.com/75546113/198456855-e965129e-24ae-40c2-8fcb-8f942711233e.mp4
 
+### Tetris:
+
+https://user-images.githubusercontent.com/75546113/219907876-f7378e31-f6b1-4bcf-a1fc-4af6008d7b86.mp4
+
+---
 
 TODO: More games
