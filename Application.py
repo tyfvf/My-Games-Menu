@@ -1,16 +1,16 @@
 from tkinter import *
+from customtkinter import *
 import awesometkinter as atk
 from Games import Games
 
 
 class Application(Games):
     def __init__(self):
-        self.root = Tk()
+        self.root = CTk()
         self.screen()
         self.frames()
         self.title()
         self.game_buttons()
-        self.scrollbar()
         self.tooltips()
         self.root.mainloop()
 
@@ -19,61 +19,52 @@ class Application(Games):
         self.root.geometry('500x500')
         self.root.title('My Games Menu')
         self.root.resizable(False, False)
-        self.root.config(bg='#F5895D')
 
 
     def frames(self):
-        self.frame1 = Frame(self.root, bg='#DE5E49')
+        self.frame1 = CTkFrame(self.root)
         self.frame1.place(relx=0.05, rely=0.05, relwidth=0.90, relheight=0.15)
 
-        self.frame2 = Frame(self.root, bg='#DE5E49')
+        self.frame2 = CTkScrollableFrame(self.root)
         self.frame2.place(relx=0.05, rely=0.25, relwidth=0.90, relheight=0.70)
-
-        self.canvas = Canvas(self.frame2, bg='#DE5E49', scrollregion=(0, 0, 0, 700), height=500)
 
 
     def title(self):
-        self.title_lb = Label(self.frame1, text='My Games Menu', bg='#DE5E49', font=('Times', 32, 'bold'))
-        self.title_lb.place(relx=0.13, rely=0.05, relheight=0.90)
+        self.title_lb = CTkLabel(self.frame1, text='My Games Menu', font=('Times', 32, 'bold'))
+        self.title_lb.pack(pady=20)
 
-        self.note_lb = Label(self.frame1, text='on pygame', bg='#DE5E49', font=('Times', 9, 'bold'))
+        self.note_lb = CTkLabel(self.frame1, text='on pygame', font=('Times', 9, 'bold'))
         self.note_lb.place(relx=0.85, rely=0.72)
 
 
     def game_buttons(self):
-        self.first_bt = Button(self.canvas, text='My first game', width=12, bg='#FAB353', activebackground='#FAB353', command=self.first)
-        self.canvas.create_window(220, 20, window=self.first_bt)
+        self.first_bt = CTkButton(self.frame2, text='My first game',  command=self.first)
+        self.first_bt.pack(pady=20)
 
-        self.pong_bt = Button(self.canvas, text='Pong', bg='#FAB353', width=12, activebackground='#FAB353', command=self.pong)
-        self.canvas.create_window(220, 60, window=self.pong_bt)
+        self.pong_bt = CTkButton(self.frame2, text='Pong', command=self.pong)
+        self.pong_bt.pack()
 
-        self.runner_bt = Button(self.canvas, text='Runner', bg='#FAB353', width=12, activebackground='#FAB353', command=self.runner)
-        self.canvas.create_window(220, 100, window=self.runner_bt)
+        self.runner_bt = CTkButton(self.frame2, text='Runner',  command=self.runner)
+        self.runner_bt.pack(pady=20)
 
-        self.flappy_bt = Button(self.canvas, text='Flappy Bird', bg='#FAB353',  width=12, activebackground='#FAB353', command=self.flappy)
-        self.canvas.create_window(220, 140, window=self.flappy_bt)
+        self.flappy_bt = CTkButton(self.frame2, text='Flappy Bird',   command=self.flappy)
+        self.flappy_bt.pack()
 
-        self.tic_bt = Button(self.canvas, text='Tic Tac Toe', bg='#FAB353', width=12, activebackground='#FAB353', command=self.tictactoe)
-        self.canvas.create_window(220, 180, window=self.tic_bt)
+        self.tic_bt = CTkButton(self.frame2, text='Tic Tac Toe',  command=self.tictactoe)
+        self.tic_bt.pack(pady=20)
 
-        self.snake_bt = Button(self.canvas, text='Snake Game', bg='#FAB353', width=12, activebackground='#FAB353', command=self.snake)
-        self.canvas.create_window(220, 220, window=self.snake_bt)
+        self.snake_bt = CTkButton(self.frame2, text='Snake Game',  command=self.snake)
+        self.snake_bt.pack()
 
-        self.whip_bt = Button(self.canvas, text='Whip Game', bg='#FAB353', width=12, activebackground='#FAB353', command=self.whip)
-        self.canvas.create_window(220, 260, window=self.whip_bt)
+        self.whip_bt = CTkButton(self.frame2, text='Whip Game',  command=self.whip)
+        self.whip_bt.pack(pady=20)
 
-        self.minesweeper_bt = Button(self.canvas, text='Minesweeper', bg='#FAB353', width=12, activebackground='#FAB353', command=self.minesweeper)
-        self.canvas.create_window(220, 300, window=self.minesweeper_bt)
+        self.minesweeper_bt = CTkButton(self.frame2, text='Minesweeper',  command=self.minesweeper)
+        self.minesweeper_bt.pack()
 
-        self.chess_bt = Button(self.canvas, text='Chess', bg='#FAB353', width=12, activebackground='#FAB353', command=self.chess)
-        self.canvas.create_window(220, 340, window=self.chess_bt)
+        self.chess_bt = CTkButton(self.frame2, text='Chess',  command=self.chess)
+        self.chess_bt.pack(pady=20)
 
-
-    def scrollbar(self):
-        self.scroll = Scrollbar(self.frame2, orient=VERTICAL, command=self.canvas.yview)
-        self.canvas.config(yscrollcommand=self.scroll.set)
-        self.scroll.pack(side=RIGHT, fill=Y)
-        self.canvas.pack(side=LEFT, expand=True, fill=BOTH)
 
 
     def tooltips(self):
