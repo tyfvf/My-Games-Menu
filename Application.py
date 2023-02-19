@@ -65,6 +65,9 @@ class Application(Games):
         self.chess_bt = CTkButton(self.frame2, text='Chess',  command=self.chess)
         self.chess_bt.pack(pady=20)
 
+        self.tetris_bt = CTkButton(self.frame2, text='Tetris',  command=self.tetris)
+        self.tetris_bt.pack()
+
 
 
     def tooltips(self):
@@ -77,3 +80,4 @@ class Application(Games):
         atk.tooltip(self.whip_bt, 'This i made with a self restriction time of one hour\nand under a random theme my friend chose, which was: whip')
         atk.tooltip(self.minesweeper_bt, 'A minesweeper clone OOP oriented, from a yt channel called Daniel Chang\nProps to him')
         atk.tooltip(self.chess_bt, 'A chees game OOP oriented, from a yt channel called Coding Spot\nProps to him')
+        atk.tooltip(self.tetris_bt, 'A tetris game replica, pretty fun, props to Coder Space')

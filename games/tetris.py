@@ -32,11 +32,11 @@ field = [[0 for i in range(W)] for j in range(H)]
 
 anim_count, anim_speed, anim_limit = 0, 60, 2000
 
-bg = pygame.image.load('graphics/tetris/bg.jpg').convert()
-game_bg = pygame.image.load('graphics/tetris/bg2.jpg').convert()
+bg = pygame.image.load('./games/graphics/tetris/bg.jpg').convert()
+game_bg = pygame.image.load('./games/graphics/tetris/bg2.jpg').convert()
 
-main_font = pygame.font.Font('font/tetris.ttf', 65)
-font = pygame.font.Font('font/tetris.ttf', 45)
+main_font = pygame.font.Font('./games/font/tetris.ttf', 65)
+font = pygame.font.Font('./games/font/tetris.ttf', 45)
 
 title_tetris = main_font.render('TETRIS', True, pygame.Color('darkorange'))
 title_score = font.render("score: ", True, pygame.Color('green'))
