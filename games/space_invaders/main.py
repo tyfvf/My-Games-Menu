@@ -1,15 +1,17 @@
 import pygame, sys
+from player import Player
 
 class Game:
     def __init__(self):
-        pass
+        player_sprite = Player((screen_width / 2, screen_height), screen_width, 5)
+        self.player = pygame.sprite.GroupSingle(player_sprite)
 
 
     def run(self):
-        pass
+        self.player.update()
+        self.player.draw(screen)
         # update all sprite groups
-        # draw all spire groups
-
+        # draw all sprite groups
 
 if __name__ == '__main__':
     pygame.init()
@@ -25,7 +27,7 @@ if __name__ == '__main__':
                 pygame.quit()
                 sys.exit()
 
-        screen.fill((30, 30, 30))
+        screen.fill((30,30,30))
         game.run()
 
         pygame.display.flip()
