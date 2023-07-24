@@ -11,6 +11,11 @@ class Game:
         player_sprite = Player((screen_width / 2, screen_height), screen_width, 5)
         self.player = pygame.sprite.GroupSingle(player_sprite)
 
+        # health and score setup
+        self.lives = 3
+        self.live_surf = pygame.image.load('resources/graphics/space_invaders/player.png').convert_alpha()
+        self.live_x_start_pos = screen_width - (self.live_surf.get_size()[0] * 2 + 20)
+
         # Obstacle Setup
         self.shape = obstacle.shape
         self.block_size = 6
@@ -115,7 +120,10 @@ class Game:
                 # player collisions
                 if pygame.sprite.spritecollide(alien_laser, self.player, False):
                     alien_laser.kill()
-                    print('Kill')
+                    self.lives -= 1
+                    if self.lives <= 0:
+                        pygame.quit()
+                        sys.exit()
 
         # aliens
         if self.aliens:
@@ -127,6 +135,12 @@ class Game:
                     sys.exit()
 
 
+    def display_lives(self):
+        for live in range(self.lives - 1):
+            x = self.live_x_start_pos + (live * (self.live_surf.get_size()[0] + 10))
+            screen.blit(self.live_surf, (x, 8))
+
+
     def run(self):
         self.player.update()
         self.aliens.update(self.alien_direction)
@@ -135,6 +149,7 @@ class Game:
         self.extra_alien_timer()
         self.extra.update()
         self.collision_checks()
+        self.display_lives()
 
         self.player.sprite.lasers.draw(screen)
         self.player.draw(screen)
