@@ -84,3 +84,4 @@ class Application(Games):
         atk.tooltip(self.minesweeper_bt, 'A minesweeper clone OOP oriented, from a yt channel called Daniel Chang\nProps to him')
         atk.tooltip(self.chess_bt, 'A chees game OOP oriented, from a yt channel called Coding Spot\nProps to him')
         atk.tooltip(self.tetris_bt, 'A tetris game replica, pretty fun, props to Coder Space')
+        atk.tooltip(self.space_invaders_bt, 'Space invaders replica, so pretty. Shoutout to Clear Code')
