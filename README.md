@@ -3,7 +3,7 @@
 A menu i made to showcase all games i made and will make it with pygame.
 
 
-## (NEW) menu interface
+##  Menu interface
 
 ![image](https://user-images.githubusercontent.com/75546113/219907628-1f319e1c-660d-42ad-a0ae-3aac964aaf86.png)
 
@@ -48,6 +48,10 @@ https://user-images.githubusercontent.com/75546113/198456855-e965129e-24ae-40c2-
 ### Tetris:
 
 https://user-images.githubusercontent.com/75546113/219907876-f7378e31-f6b1-4bcf-a1fc-4af6008d7b86.mp4
+
+### Space Invaders:
+
+https://github.com/tyfvf/My-Games-Menu/assets/75546113/149cf9b9-e7c6-4794-ba1f-9362bd30fcf0
 
 ---
 
