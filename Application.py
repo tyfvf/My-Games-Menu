@@ -68,6 +68,9 @@ class Application(Games):
         self.tetris_bt = CTkButton(self.frame2, text='Tetris',  command=self.tetris)
         self.tetris_bt.pack()
 
+        self.space_invaders_bt = CTkButton(self.frame2, text='Space Invaders',  command=self.space_invaders)
+        self.space_invaders_bt.pack(pady=20)
+
 
 
     def tooltips(self):

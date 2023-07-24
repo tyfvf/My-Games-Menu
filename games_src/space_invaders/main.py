@@ -1,9 +1,9 @@
 import pygame, sys
-import obstacle
-from player import Player
-from alien import Alien, Extra
+import games_src.space_invaders.obstacle as obstacle
+from games_src.space_invaders.player import Player
+from games_src.space_invaders.alien import Alien, Extra
+from games_src.space_invaders.laser import Laser
 from random import choice, randint
-from laser import Laser
 
 class Game:
     def __init__(self):
@@ -13,10 +13,10 @@ class Game:
 
         # health and score setup
         self.lives = 3
-        self.live_surf = pygame.image.load('resources/graphics/space_invaders/player.png').convert_alpha()
+        self.live_surf = pygame.image.load('./resources/graphics/space_invaders/player.png').convert_alpha()
         self.live_x_start_pos = screen_width - (self.live_surf.get_size()[0] * 2 + 20)
         self.score = 0
-        self.font = pygame.font.Font('resources/font/Pixeltype.ttf', 45)
+        self.font = pygame.font.Font('./resources/font/Pixeltype.ttf', 45)
 
         # Obstacle Setup
         self.shape = obstacle.shape
@@ -37,11 +37,11 @@ class Game:
         self.extra_spawn_time = randint(400, 800)
 
         # Audio
-        music = pygame.mixer.Sound('resources/audio/space_invaders/music.wav')
+        music = pygame.mixer.Sound('./resources/audio/space_invaders/music.wav')
         music.set_volume(0.1)
-        self.laser_sound = pygame.mixer.Sound('resources/audio/space_invaders/laser.wav')
+        self.laser_sound = pygame.mixer.Sound('./resources/audio/space_invaders/laser.wav')
         self.laser_sound.set_volume(0.1)
-        self.explosion_sound = pygame.mixer.Sound('resources/audio/space_invaders/explosion.wav')
+        self.explosion_sound = pygame.mixer.Sound('./resources/audio/space_invaders/explosion.wav')
         self.explosion_sound.set_volume(0.1)
         music.play(loops=-1)
 
@@ -195,7 +195,7 @@ class Game:
 
 class CRT:
     def __init__(self):
-        self.tv = pygame.image.load('resources/graphics/space_invaders/tv.png').convert_alpha()
+        self.tv = pygame.image.load('././resources/graphics/space_invaders/tv.png').convert_alpha()
         self.tv = pygame.transform.scale(self.tv, (screen_width, screen_height))
 
 
@@ -213,29 +213,27 @@ class CRT:
         screen.blit(self.tv, (0, 0))
 
 
-if __name__ == '__main__':
-    pygame.init()
-    screen_width = 600
-    screen_height = 600
-    screen = pygame.display.set_mode((screen_width, screen_height))
-    clock = pygame.time.Clock()
-    game = Game()
-    crt = CRT()
+pygame.init()
+screen_width = 600
+screen_height = 600
+screen = pygame.display.set_mode((screen_width, screen_height))
+clock = pygame.time.Clock()
+game = Game()
+crt = CRT()
 
-    ALIENLASER = pygame.USEREVENT + 1
-    pygame.time.set_timer(ALIENLASER, 800)
+ALIENLASER = pygame.USEREVENT + 1
+pygame.time.set_timer(ALIENLASER, 800)
 
-    while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            if event.type == ALIENLASER:
-                game.alien_shoot()
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+        if event.type == ALIENLASER:
+            game.alien_shoot()
 
-        screen.fill((30,30,30))
-        game.run()
-        crt.draw()
+    screen.fill((30,30,30))
+    game.run()
+    crt.draw()
 
-        pygame.display.flip()
-        clock.tick(60)
+    pygame.display.flip()
+    clock.tick(60)

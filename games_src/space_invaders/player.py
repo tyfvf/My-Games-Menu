@@ -1,17 +1,17 @@
 import pygame
-from laser import Laser
+from games_src.space_invaders.laser import Laser
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, pos, constraint, speed):
         super().__init__()
-        self.image = pygame.image.load('resources/graphics/space_invaders/player.png').convert_alpha()
+        self.image = pygame.image.load('./resources/graphics/space_invaders/player.png').convert_alpha()
         self.rect = self.image.get_rect(midbottom = pos)
         self.speed = speed
         self.max_x_constraint = constraint
         self.ready = True
         self.laser_time = 0
         self.laser_cooldown = 600
-        self.laser_sound = pygame.mixer.Sound('resources/audio/space_invaders/laser.wav')
+        self.laser_sound = pygame.mixer.Sound('./resources/audio/space_invaders/laser.wav')
         self.laser_sound.set_volume(0.1)
 
         self.lasers = pygame.sprite.Group()
